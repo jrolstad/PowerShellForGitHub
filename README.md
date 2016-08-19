@@ -47,7 +47,25 @@ Please keep in mind some tests may fail on your machine, as they test private it
 
 ## Contributing
 
-Contributions are welcome, please open issue on what functionality you would like to see added/contribute or simply send a pull request.
+Contributions are welcome, please open issue on what functionality you would like to see added/contribute or simply send a pull request.  
+Contributions must meet the following guidelines to be accepted as a pull request:
+1. You (the contributor) must sign the [Microsoft CLA](https://cla.microsoft.com)
+2. Any Powershell function needs documentation (Synopsis, Parameters, Examples)
+```powershell
+<#
+    .SYNOPSIS What the function does
+    .PARAM
+        repository Description of the parameter
+    .PARAM
+        gitHubAccessToken GitHub API Access Token.
+            Get github token from https://github.com/settings/tokens 
+            If you don't provide it, you can still use this script, but you will be limited to 60 queries per hour.
+    .EXAMPLE
+        My-SuperCool-Function -repository FTW
+#>
+```
+3. Code changes needs corresponding tests added.  The test(s) belong in the matching test file for the function. (Ex: For changes to GitHubAnalytics.psm1, add tests to Tests\GitHubAnalytics.tests.ps1).  All tests must pass and be passable on AppVeyor. 
+
 
 ## Examples
 
